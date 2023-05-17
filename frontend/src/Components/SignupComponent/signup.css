@@ -1,0 +1,22 @@
+.register {
+    height: 565px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(31, 142, 222);
+    margin-top: -43%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#radio {
+    font-size: 20px;
+}
+
+/* .forms {
+    width: 35%;
+    margin-left: 33%;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+} */

@@ -1,0 +1,20 @@
+.notify {
+    margin-top: -42%;
+    margin-left: 18%;
+}
+
+.cartImg {
+    /* max-width: 0%; */
+    border: .5px solid grey;
+    display: flex;
+    justify-content: center;
+}
+
+.img {
+    max-height: 20vh;
+}
+
+/* Notify Count */
+.insideOut{
+    z-index: -1;
+}

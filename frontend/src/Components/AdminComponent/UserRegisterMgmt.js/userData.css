@@ -1,0 +1,19 @@
+.usermgmt {
+    margin-top: -41%;
+    margin-left: 18%;
+}
+
+.userDataTable {
+    max-width: 80%;
+    max-height: 65vh;
+    overflow-x: auto;
+}
+
+.th {
+    position: sticky;
+    top: 0px;
+}
+
+.inside{
+    z-index: -1;
+}

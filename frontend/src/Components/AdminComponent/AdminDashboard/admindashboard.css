@@ -1,0 +1,25 @@
+.admindash {
+    margin-top: 1%;
+    height: 540px;
+}
+
+.bgColor {
+    background-color: rgb(52, 150, 231);
+}
+
+.n {
+    height: 7vh;
+    padding-top: 10px;
+}
+
+.n:hover {
+    background-color: rgb(226, 232, 237);
+    color: black;
+}
+
+.menu {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    height:fit-content;
+}

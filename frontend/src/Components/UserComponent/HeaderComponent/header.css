@@ -1,0 +1,28 @@
+.headers {
+    height: 70px;
+    width: 1325px;
+    display: flex;
+    background-color: rgb(31, 142, 222);
+    color: white;
+    /* margin-left: 1px; */
+}
+
+.userDetailView{
+    z-index: 1;
+    width: 99%;
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+}
+.userMenu {
+    /* position: absolute; */
+    z-index: 1;
+    width: 20%;
+    border-radius: 10px;
+    background-color: black;
+    text-align: center;
+    color: white;
+    margin-right: 24px;
+    margin-top: 11px;
+    padding: 10px;
+}

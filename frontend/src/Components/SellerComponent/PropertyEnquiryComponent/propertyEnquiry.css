@@ -1,0 +1,43 @@
+.viewEnquiry {
+    margin-top: -47%;
+    margin-left: 20%;
+}
+
+.sellericon {
+    margin-top: -10px;
+}
+
+p span {
+    padding-top: 10px;
+}
+
+.box {
+    height: 7vh;
+    padding-top: 10px;
+}
+
+.noEnquiry {
+    margin-top: -35%;
+    margin-left: 45%;
+}
+
+.nomsg {
+    width: 100px;
+    height: 100px;
+}
+
+.userProfile {
+    margin-top: 6vh;
+    margin-left: 74%;
+    position: absolute;
+    z-index: 1;
+    width: 25%;
+}
+
+.msg {
+    max-width: 10px;
+}
+
+.cp {
+    cursor: pointer;
+}

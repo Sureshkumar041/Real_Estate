@@ -1,0 +1,20 @@
+.buyerEnquiries {
+    margin-top: -555px;
+    margin-left: 240px;
+}
+
+.profileViews {
+    box-shadow: 0 4px 8px 0 rgba(245, 236, 236, 0.2);
+    border: 0px solid white;
+    min-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    background-color: aliceblue;
+    padding: 15px 0px;
+}
+
+.individualChat {
+    min-height: 58vh;
+    height: 58vh;
+}

@@ -1,0 +1,41 @@
+.cart {
+    margin-top: 10vh;
+    border: solid 1px black;
+}
+
+.image {
+    max-height: 33vh;
+    max-width: 100%;
+}
+
+.cartShow {
+    /* max-width: 33%; */
+    margin-top: 25px;
+}
+
+.image {
+    max-width: 33%;
+    max-height: fit-content;
+}
+
+img {
+    max-width: 100%;
+}
+
+.cartD {
+    margin-top: 6vh;
+    width: 100%;
+}
+
+.carts {
+    width: 18rem;
+}
+
+.enqSnd {
+    position: absolute;
+    top: 45%;
+    left: 22%;
+    z-index: 1;
+    width: 50%;
+    background-color: aqua;
+}

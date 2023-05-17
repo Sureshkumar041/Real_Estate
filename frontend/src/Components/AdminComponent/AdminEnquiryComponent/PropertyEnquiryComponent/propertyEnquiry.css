@@ -1,0 +1,16 @@
+.adminEnquiries {
+    margin-top: -40%;
+    margin-left: 20%;
+}
+
+.paddingRight {
+    padding-right: 100px;
+}
+
+.viewEnq{
+    max-height: 300px   ;
+    min-height: 300px;
+    background-color: rgb(173, 224, 241);
+    overflow-x: auto;
+    border-radius: 10px;
+}

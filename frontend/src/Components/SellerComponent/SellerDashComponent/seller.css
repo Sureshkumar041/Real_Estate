@@ -1,0 +1,12 @@
+.sellerdash{
+    height: 540px;
+    margin-top: 1%;
+}
+.n{ 
+    height: 7vh;
+    padding-top: 10px;
+}
+.n:hover{
+    background-color: rgb(226, 232, 237);
+    color: black;
+}
