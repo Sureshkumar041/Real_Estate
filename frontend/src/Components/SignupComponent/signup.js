@@ -126,7 +126,7 @@ class SignUp extends Component {
                         <FormControl className='gap-2' variant='standard'>
                             <FormLabel>Role</FormLabel>
                             <RadioGroup row defaultValue={'Buyer'} name='role' onChange={e => this.HandleChange(e)} >
-                                <FormControlLabel value="Admin" control={<Radio />} label="Buyer" />
+                                <FormControlLabel value="Buyer" control={<Radio />} label="Buyer" />
                                 <FormControlLabel value="Seller" control={<Radio />} label="Seller" />
                             </RadioGroup>
                             <TextField label='Enter the email' type='email' name='email' variant='standard' onChange={e => this.HandleChange(e)} required />
