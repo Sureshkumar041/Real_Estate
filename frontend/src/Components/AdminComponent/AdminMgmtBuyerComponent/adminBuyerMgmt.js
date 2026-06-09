@@ -28,7 +28,7 @@ const AdminBuyerMgmt = () => {
                 } else {
                     if (window.confirm('Login again')) {
                         console.log("Okay");
-                        navigate('/realestate/login')
+                        navigate('/login')
                     }
                 }
             })

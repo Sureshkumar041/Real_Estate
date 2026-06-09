@@ -104,17 +104,17 @@ const ViewProperty = () => {
                             success(fetchData.data)
                             setSendEnquirySeller(false)
                             setTimeout(() => {
-                                nxtPage('/realestate/propertyenquiry')
+                                nxtPage('/propertyenquiry')
                             }, 1000)
                         } else {
                             if (fetchData.data.data === 'jwt expired' || fetchData.data.data === 'jwt malfarmed') {
                                 if (window.confirm('Login again')) {
-                                    nxtPage('/realestate/login')
+                                    nxtPage('/login')
                                 }
                             } else {
                                 if (fetchData.data === 'Add your details') {
                                     if (window.confirm('Add your details ?')) {
-                                        nxtPage('/realestate/user/editprofile')
+                                        nxtPage('/user/editprofile')
                                     }
                                 } else {
                                     error(fetchData.data)
@@ -124,7 +124,7 @@ const ViewProperty = () => {
                     })
             } else {
                 if (window.confirm('Login again')) {
-                    navigate('/realestate/login')
+                    navigate('/login')
                 }
             }
         } else {
@@ -272,7 +272,7 @@ const ViewProperty = () => {
                             <p> {individualProperty.info} </p>
                         </div>
                     </div>
-                    {/* <Button variant='contained' className="w-25 my-5" onClick={() => navigate('/realestate')} >Back</Button> */}
+                    {/* <Button variant='contained' className="w-25 my-5" onClick={() => navigate('/')} >Back</Button> */}
                     {sendEnquirySeller && enquirySend()}
                 </div>
             )

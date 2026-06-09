@@ -339,7 +339,7 @@ const AdminMaster = () => {
 
   // Master API for location
   const cityMaster = () => {
-    // const url = 'http://localhost:3333/realestate/showlocation'
+    // const url = 'http://localhost:3333/showlocation'
     fetch(`${API}/showlocation`)
       .then(async res => {
         const fetchData = await res.json()

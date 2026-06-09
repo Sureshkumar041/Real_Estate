@@ -95,7 +95,7 @@ const UpdateProp = (props) => {
 
     const cancel = () => {
         setFormVisibility(!formVisibility)
-        navigate('/realestate/manageproperty')
+        navigate('/manageproperty')
     }
 
     // const setValue = () => {
@@ -260,7 +260,7 @@ const UpdateProp = (props) => {
     // }, [])
 
     const cityMaster = () => {
-        const url = 'http://localhost:3333/realestate/showlocation'
+        const url = 'http://localhost:3333/showlocation'
         fetch(url)
             .then(async res => {
                 const fetchData = await res.json()

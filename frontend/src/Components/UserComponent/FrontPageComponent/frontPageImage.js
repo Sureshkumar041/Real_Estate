@@ -14,7 +14,7 @@ const FrontPageImage = () => {
     return (
       <div className="frontPage">
         <img
-          src={driveImg}
+          src={frontPage}
           className=""
           style={imgStyle}
           alt="Google Drive Img Not Avaliable"
@@ -22,7 +22,6 @@ const FrontPageImage = () => {
             console.log("Err in img: ", e);
           }}
         />
-        <img src="https://drive.google.com/uc?export=view&id=1QEXUeKOcs6db0AfLRxyk2BS4JRLmiFxh" />
       </div>
     );
   };

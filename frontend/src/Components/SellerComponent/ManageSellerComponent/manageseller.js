@@ -34,7 +34,7 @@ const MyProperty = () => {
                     }
                 } else {
                     if (window.confirm('Login again')) {
-                        navigate('/realestate/login')
+                        navigate('/login')
                     } else {
                         console.log("Else");
                     }
@@ -92,14 +92,14 @@ const MyProperty = () => {
     const edit = (e, item) => {
         e.preventDefault();
         console.log("Event");
-        navigate(`/realestate/seller/editproperty/${item.propsId}`)
+        navigate(`/seller/editproperty/${item.propsId}`)
     }
 
     const routing = () => {
         return (
             <>
                 <Breadcrumbs aria-label="breadcrumb">
-                    <Link to={'/realestate/dashboard/notifications'} underline="hover" color="inherit">
+                    <Link to={'/dashboard/notifications'} underline="hover" color="inherit">
                         Dashboard notifications
                     </Link>
                     <Typography color="text.primary">Manage Property</Typography>
@@ -158,14 +158,14 @@ const MyProperty = () => {
                                                                 propsId.enquiryCount !== 0 ?
                                                                     (
                                                                         <button className="btn btn-warning"
-                                                                            onClick={() => nxtPage(`/realestate/admin/propsenquiry/${item.propsId}`)}
+                                                                            onClick={() => nxtPage(`/admin/propsenquiry/${item.propsId}`)}
                                                                             key={index}>
                                                                             {propsId.enquiryCount}
                                                                         </button>
                                                                     ) :
                                                                     (
                                                                         <button className="btn btn-warning"
-                                                                            onClick={() => nxtPage(`/realestate/admin/propsenquiry/${item.propsId}`)}
+                                                                            onClick={() => nxtPage(`/admin/propsenquiry/${item.propsId}`)}
                                                                             key={index} disabled>
                                                                             {propsId.enquiryCount}
                                                                         </button>

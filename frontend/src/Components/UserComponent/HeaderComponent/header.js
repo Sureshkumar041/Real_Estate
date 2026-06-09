@@ -47,7 +47,7 @@ const Header = () => {
                             (
                                 userData.role === 'Seller' ?
                                     (
-                                        <Link to={'/realestate/dashboard/notifications'} className='text-decoration-none text-info my-1' >
+                                        <Link to={'/dashboard/notifications'} className='text-decoration-none text-info my-1' >
                                             <button className='btn btn-outline-info border-0 w-75'>
                                                 <MdOutlineDashboardCustomize className='text-white mx-3' />
                                                 Dashboard
@@ -56,7 +56,7 @@ const Header = () => {
                                     )
                                     :
                                     (
-                                        <Link to={'/realestate/dashboard/notifications'} className='text-decoration-none text-info my-1' >
+                                        <Link to={'/dashboard/notifications'} className='text-decoration-none text-info my-1' >
                                             <button className='btn btn-outline-info border-0 w-75'>
                                                 <MdOutlineDashboardCustomize className='text-white mx-3' />
                                                 Dashboard
@@ -65,13 +65,13 @@ const Header = () => {
                                     )
                             )
                     }
-                    <Link to={'/realestate/propertyenquiry'} className='text-decoration-none text-info my-1'>
+                    <Link to={'/propertyenquiry'} className='text-decoration-none text-info my-1'>
                         <button className='btn btn-outline-info border-0 w-75'>
                             <span><TbMessageCircle className='text-white mx-3' /></span>
                             Your Enquiry
                         </button>
                     </Link>
-                    <Link to={'/realestate/user/viewprofile'} >
+                    <Link to={'/user/viewprofile'} >
                         <button className='btn btn-outline-info border-0 w-75' >
                             <span>
                                 <SlUserFollowing className='text-white mx-3' />
@@ -88,11 +88,11 @@ const Header = () => {
     const unAuthorizedPerson = () => {
         return (
             <div>
-                <Button variant='contained' className='bg-white text-primary h5 mx-2' onClick={() => nxtPage('/realestate/signup')}>
+                <Button variant='contained' className='bg-white text-primary h5 mx-2' onClick={() => nxtPage('/signup')}>
                     Signup
                     <CiUser className='mx-1 fs-4'></CiUser>
                 </Button>
-                <Button variant='outlined' className='border text-white h5' onClick={() => nxtPage('/realestate/login')}>
+                <Button variant='outlined' className='border text-white h5' onClick={() => nxtPage('/login')}>
                     <CgLogIn className='mx-1 fs-3'></CgLogIn>
                     Login
                 </Button>
@@ -107,7 +107,7 @@ const Header = () => {
                     <FcHome className='fs-1' />
                     <Typography className='btn fs-2 text-light shadow-sm'>Real Estate</Typography>
                     <span className='mx-4'>
-                        <Link to='/realestate' className='text-decoration-none'>
+                        <Link to='/' className='text-decoration-none'>
                             <button variant='outlined'
                                 data-bs-tooltip='tooltip'
                                 title='Click to home'

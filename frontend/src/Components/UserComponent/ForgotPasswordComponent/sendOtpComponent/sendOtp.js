@@ -57,7 +57,7 @@ const SendOtp = () => {
                     setLoadingAction(false)
                     success(fetchdata.data.message)
                     setTimeout(() => {
-                        nxtPage(`/realestate/user/verifyotp/${fetchdata.data.userId}`)
+                        nxtPage(`/user/verifyotp/${fetchdata.data.userId}`)
                     }, 2000)
                 } else {
                     setTimeout(() => {
@@ -90,14 +90,14 @@ const SendOtp = () => {
                             <ToastContainer />
                         </div>
                         <div className='m-1 d-flex justify-content-center'>
-                            <Link to={'/realestate/signup'}
+                            <Link to={'/signup'}
                                 className='row text-decoration-none '>
                                 Create new account
                             </Link>
                         </div>
                         <div className='d-flex justify-content-center'>
                             <p className='mx-2'>Already have account ?
-                                <Link to={'/realestate/login'}
+                                <Link to={'/login'}
                                     className='text-decoration-none' data-bs-tooltip='tooltip'
                                     title='Click to Login' >
                                     <span className='mx-2'>Login</span>

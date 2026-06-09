@@ -49,7 +49,7 @@ export function PostProperty() {
           // alert(fetchData.data.data)
           success(fetchData.data.data)
           setTimeout(()=>{
-            navigate('/realestate/manageproperty')
+            navigate('/manageproperty')
           },2000)
         } else {
           alert(fetchData.data.data)
@@ -129,7 +129,7 @@ export function PostProperty() {
   // }
 
   const cityMaster = () => {
-    const url = 'http://localhost:3333/realestate/showlocation'
+    const url = 'http://localhost:3333/showlocation'
     fetch(url)
       .then(async res => {
         const fetchData = await res.json()
@@ -320,7 +320,7 @@ export function PostProperty() {
               />
             </div>
             <div className='row my-3 mx-2'>
-              <button className='col btn bg-secondary text-light  mx-4' onClick={() => nxtPage('/realestate/dashboard/notifications')}>
+              <button className='col btn bg-secondary text-light  mx-4' onClick={() => nxtPage('/dashboard/notifications')}>
                 Cancel
               </button>
               <button className='col btn bg-info mx-4' type='submit'>

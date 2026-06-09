@@ -175,7 +175,7 @@ const PropsEnquires = () => {
                 } else {
                     if (fetchData.data.data === 'jwt expired' || fetchData.data.data === 'jwt malfarmed') {
                         if (window.confirm('Login again')) {
-                            navigate('/realestate/login')
+                            navigate('/login')
                         }
                     } else {
                         error(fetchData.data);
@@ -229,7 +229,7 @@ const PropsEnquires = () => {
     //             } else {
     //                 if (fetchData.data.data === 'jwt expired' || fetchData.data.data === 'jwt malfarmed') {
     //                     if (window.confirm('Login again')) {
-    //                         navigate('/realestate/login')
+    //                         navigate('/login')
     //                     }
     //                 } else {
     //                     error(fetchData.data);

@@ -136,7 +136,7 @@ const ReceiveEnquiry = () => {
                 } else {
                     if (fetchData.data.data === 'jwt expired' || fetchData.data.data === 'jwt malfarmed') {
                         if (window.confirm('Login again')) {
-                            navigate('/realestate/login')
+                            navigate('/login')
                         }
                     } else {
                         error(fetchData.data);
@@ -158,8 +158,8 @@ const ReceiveEnquiry = () => {
     }
 
     const back = () => {
-        if (saveEnquiry.role === 'Buyer') navigate('/realestate')
-        else navigate('/realestate/dashboard/notifications')
+        if (saveEnquiry.role === 'Buyer') navigate('/')
+        else navigate('/dashboard/notifications')
     }
 
     const receiverDetails = () => {
@@ -479,7 +479,7 @@ const ReceiveEnquiry = () => {
                                     <div className="row container-fluid text-center py-2 shadow bg-light" key={index}>
                                         {
                                             saveEnquiry.role === 'Buyer' ?
-                                                // to={`/realestate/seller/propsenquiries/${item.receiverId}`}
+                                                // to={`/seller/propsenquiries/${item.receiverId}`}
                                                 (<Link onClick={() => msgChat(item)} className="navbar-brand text-center l">
                                                     {item.receiverName}
                                                 </Link>) :

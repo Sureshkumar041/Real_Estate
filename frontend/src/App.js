@@ -54,7 +54,7 @@ function App() {
               </div>
             </div>
           </header>
-          <img
+          {/* <img
             src={driveImg}
             className=""
             style={imgStyle}
@@ -69,7 +69,7 @@ function App() {
             onError={(e) => {
               console.log("Err in Google: ", e);
             }}
-          />
+          /> */}
         </div>
       </React.Fragment>
     );

@@ -17,7 +17,7 @@ const AddDetails = () => {
     const addYourDetails = () => {
         return (
             <Typography className='text-primary cp'
-                onClick={() => nxtPage('/realestate/user/editprofile')}
+                onClick={() => nxtPage('/user/editprofile')}
                 data-bs-tooltip='tooltip'
                 title='Click to add your details'>Add your details</Typography>
         )

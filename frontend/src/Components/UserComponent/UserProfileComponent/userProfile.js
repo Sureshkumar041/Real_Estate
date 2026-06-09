@@ -47,7 +47,7 @@ const UserProfile = () => {
                             <div className="col-lg-4">
                                 <div className="card mb-4">
                                     <div className="card-body text-center">
-                                        <div className="position-absolute" onClick={() => nxtPage('/realestate')} >
+                                        <div className="position-absolute" onClick={() => nxtPage('/')} >
                                             <p className="fs-1 cp" >&times; </p>
                                         </div>
                                         {
@@ -84,13 +84,13 @@ const UserProfile = () => {
                                         <p className="text-muted mb-1">{userData.data.role} </p>
                                         <p className="text-muted mb-4">{userData.data.email} </p>
                                         <div className="d-flex justify-content-center mb-2">
-                                            <button className="btn btn-outline-primary mx-2" data-bs-tooltip='tooltip' data-bs-placement='top' title='Click to change password' onClick={() => nxtPage('/realestate/user/changepassword')} >
+                                            <button className="btn btn-outline-primary mx-2" data-bs-tooltip='tooltip' data-bs-placement='top' title='Click to change password' onClick={() => nxtPage('/user/changepassword')} >
                                                 {/* <RiLockPasswordFill className="mx-1 text-danger"></RiLockPasswordFill> */}
                                                 Change password
                                             </button>
                                             {/* <button type="button" className="btn btn-outline-primary mx-2">Role</button> */}
                                             <button type="button" className="btn btn-primary">{userData.data.role} </button>
-                                            <FaUserEdit data-bs-tooltip='tooltip' data-bs-placement='top' title="Click to edit" className="fs-1 mx-2 cp text-danger" onClick={() => nxtPage('/realestate/user/editprofile')} ></FaUserEdit>
+                                            <FaUserEdit data-bs-tooltip='tooltip' data-bs-placement='top' title="Click to edit" className="fs-1 mx-2 cp text-danger" onClick={() => nxtPage('/user/editprofile')} ></FaUserEdit>
                                         </div>
                                     </div>
                                 </div>

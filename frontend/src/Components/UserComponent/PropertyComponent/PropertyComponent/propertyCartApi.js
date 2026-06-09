@@ -24,7 +24,7 @@ const PropertyCart = (props) => {
     const navigate = useNavigate();
 
     const cartImage = (API) => {
-        fetch('http://localhost:3333/realestate/cartimage')
+        fetch('http://localhost:3333/cartimage')
             .then(async (res) => {
                 const cart = await res.json();
                 return cart;
@@ -82,7 +82,7 @@ const PropertyCart = (props) => {
     //                 } else {
     //                     if (fetchData.data.data === 'jwt expired' || fetchData.data.data === 'jwt malfarmed') {
     //                         if (window.confirm('Login again')) {
-    //                             navigate('/realestate/login')
+    //                             navigate('/login')
     //                         }
     //                     } else {
     //                         alert(fetchData.data.data);
@@ -104,7 +104,7 @@ const PropertyCart = (props) => {
         } else {
             // alert('Login');
             if (window.confirm('Login your account')) {
-                navigate('/realestate/login')
+                navigate('/login')
             } else {
                 console.log("Not come..!");
             }
@@ -183,7 +183,7 @@ const PropertyCart = (props) => {
                     } else {
                         if (fetchData.data.data === 'jwt expired' || fetchData.data.data === 'jwt malfarmed') {
                             if (window.confirm('Login again')) {
-                                navigate('/realestate/login')
+                                navigate('/login')
                             }
                         } else {
                             alert(fetchData.data);
@@ -217,7 +217,7 @@ const PropertyCart = (props) => {
     const filterProperty = async () => {
         console.log('Fetch');
         const token = JSON.parse(localStorage.getItem('token'))
-        await fetch(`/realestate/getproperty?propertyFor=${props.gatherDetails.propertyFor}`, {
+        await fetch(`/getproperty?propertyFor=${props.gatherDetails.propertyFor}`, {
             headers: {
                 Authorization: token
             }

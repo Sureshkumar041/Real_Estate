@@ -29,7 +29,7 @@ const AdminPropertyEnquiry = () => {
         return (
             <div className="adminEnquiry w-75">
                 <Breadcrumbs aria-label="breadcrumb">
-                    <Link to={'/realestate/dashboard/notifications'} underline="hover" color="inherit">
+                    <Link to={'/dashboard/notifications'} underline="hover" color="inherit">
                         Dashboard notifications
                     </Link>
                     <Typography color="text.primary">Manage Property</Typography>
@@ -144,7 +144,7 @@ const AdminPropertyEnquiry = () => {
     }
 
     const individualPropsEnquiry = (individualPropsId) => {
-        navigate(`/realestate/admin/propsenquiry/${individualPropsId.propsId}`)
+        navigate(`/admin/propsenquiry/${individualPropsId.propsId}`)
         setViewEnquiry(true);
         setViewPropsEnquiry(individualPropsId)
     }

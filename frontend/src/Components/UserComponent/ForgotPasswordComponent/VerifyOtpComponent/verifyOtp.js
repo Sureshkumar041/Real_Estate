@@ -76,7 +76,7 @@ const VerifyOtp = () => {
                         setTimeout(() => {
                             setLoadingAction(false)
                             success(fetchdata.data.message)
-                            nxtPage(`/realestate/user/newPassword/${params.userId}`)
+                            nxtPage(`/user/newPassword/${params.userId}`)
                         }, 2000)
                     } else {
                         setTimeout(() => {
@@ -116,7 +116,7 @@ const VerifyOtp = () => {
                         </div>
                         { /*<div className='d-flex justify-content-center'>
                             <p className='mx-2'>Already have account ?
-                                <Link to={'/realestate/login'}
+                                <Link to={'/login'}
                                     className='text-decoration-none' data-bs-tooltip='tooltip'
                                     title='Click to Login' >
                                     <span className='mx-2'>Login</span>

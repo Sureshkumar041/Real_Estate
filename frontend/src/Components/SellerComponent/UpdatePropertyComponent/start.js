@@ -80,7 +80,7 @@ const Start = () => {
                 else {
                     if (fetchData.data.data === 'jwt expired' || fetchData.data.data === 'jwt malfarmed') {
                         if (window.confirm('Login again')) {
-                            navigate('/realestate/login')
+                            navigate('/login')
                         }
                     } else {
                         error(fetchData.data.data);
@@ -93,7 +93,7 @@ const Start = () => {
     }
 
     const cityMaster = () => {
-        const url = 'http://localhost:3333/realestate/showlocation'
+        const url = 'http://localhost:3333/showlocation'
         fetch(url)
             .then(async res => {
                 const fetchData = await res.json()
@@ -169,7 +169,7 @@ const Start = () => {
                     setpropertyFor('')
                     setState('')
                     setTimeout(() => {
-                        navigate('/realestate/manageproperty')
+                        navigate('/manageproperty')
                     }, 2000)
                 } else {
                     error(fetchData.data.data)
@@ -379,7 +379,7 @@ const Start = () => {
                                 />
                             </div>
                             <div className='row my-3 mx-2'>
-                                <Link to={`/realestate/manageproperty`} className='col'>
+                                <Link to={`/manageproperty`} className='col'>
                                     <button className='w-100 btn bg-secondary text-light  mx-4' >
                                         Cancel
                                     </button>

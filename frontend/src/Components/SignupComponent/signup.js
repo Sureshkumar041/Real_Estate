@@ -23,7 +23,7 @@ class SignUp extends Component {
     }
 
     goToLogin = () => {
-        this.props.navigate('/realestate/login');
+        this.props.navigate('/login');
     }
 
     HandleChange = e => {
@@ -47,7 +47,7 @@ class SignUp extends Component {
             };
             console.log("Register value : ", data);
     
-            const url = 'http://localhost:3333/realestate/signup';
+            const url = 'http://localhost:3333/signup';
             const requestOptions = {
                 method: 'POST',
                 headers: {
@@ -140,12 +140,12 @@ class SignUp extends Component {
                         </div>
                         <div className='row'>
                             <p className='mx-2 col'>Already have account ?
-                                <Link to={'/realestate/login'} className='text-decoration-none' data-bs-tooltip='tooltip' data-bs-placement='top' title='Click to Login' >
+                                <Link to={'/login'} className='text-decoration-none' data-bs-tooltip='tooltip' data-bs-placement='top' title='Click to Login' >
                                     <span className='mx-2'>Login</span>
                                 </Link>
                             </p>
                         </div>
-                        {/* <Link to={'/realestate/login'} className='row text-decoration-none px-3'>
+                        {/* <Link to={'/login'} className='row text-decoration-none px-3'>
                             <p className='mx-2'>Already have account ?</p>
                         </Link> */}
                     </form>
@@ -196,7 +196,7 @@ class SignUp extends Component {
     //                             <button className='btn bg-info bg-opacity-75 my-2' type='Submit'>Submit</button>
     //                             {/* <button className='btn btn-outline-primary rounded-4'>Login</button> */}
     //                         </div>
-    //                         <Link to={'/realestate/login'} className='row text-decoration-none px-3'>
+    //                         <Link to={'/login'} className='row text-decoration-none px-3'>
     //                             <p className=''>Login</p>
     //                         </Link>
     //                     </form>

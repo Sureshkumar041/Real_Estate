@@ -67,12 +67,12 @@ const ChangePassword = () => {
                 if (res.status >= 199 && res.status < 300) {
                     success(fetchData.data.data)
                     setTimeout(() => {
-                        nxtPage('/realestate/user/viewprofile')
+                        nxtPage('/user/viewprofile')
                     }, 2000)
                 } else {
                     if (fetchData.data.valid) {
                         if (window.confirm('Login your account')) {
-                            nxtPage('/realestate/login')
+                            nxtPage('/login')
                         }
                     } else {
                         error(fetchData.data.data)
@@ -123,7 +123,7 @@ const ChangePassword = () => {
                         />
                     </div>
                     <div className="input-form row mx-5 d-flex gap-2 py-2 justify-content-center ">
-                        <Button variant="outlined" className="col" onClick={() => nxtPage('/realestate/user/viewprofile')} >Cancel</Button>
+                        <Button variant="outlined" className="col" onClick={() => nxtPage('/user/viewprofile')} >Cancel</Button>
                         <Button variant="contained" className="col" type="" >Change Password</Button>
                         <ToastContainer />
                     </div>

@@ -44,7 +44,7 @@ const UpdateProperty = () => {
                 const fetchData = await response.json()
                 if (response.status >= 199 && response.status < 300) {
                     alert(fetchData.data.data)
-                    navigate('/realestate/manageproperty')
+                    navigate('/manageproperty')
                 } else {
                     alert(fetchData.data.data)
                 }
@@ -85,7 +85,7 @@ const UpdateProperty = () => {
 
 
     const cityMaster = () => {
-        const url = 'http://localhost:3333/realestate/showlocation'
+        const url = 'http://localhost:3333/showlocation'
         fetch(url)
             .then(async res => {
                 const fetchData = await res.json()
@@ -150,7 +150,7 @@ const UpdateProperty = () => {
                 else {
                     if (fetchData.data.data === 'jwt expired' || fetchData.data.data === 'jwt malfarmed') {
                         if (window.confirm('Login again')) {
-                            navigate('/realestate/login')
+                            navigate('/login')
                         }
                     } else {
                         alert(fetchData.data.data);

@@ -113,22 +113,22 @@ function BuyerComponent() {
                 (
                   userData.data.role === 'Seller' ?
                     (
-                      <Link to={'/realestate/dashboard/notifications'} className='text-decoration-none text-info my-1' >
+                      <Link to={'/dashboard/notifications'} className='text-decoration-none text-info my-1' >
                         <button className='btn btn-outline-info border-0 w-75'>Dashboard</button>
                       </Link>
                     )
                     :
                     (
-                      <Link to={'/realestate/dashboard/notifications'} className='text-decoration-none text-info my-1' >
+                      <Link to={'/dashboard/notifications'} className='text-decoration-none text-info my-1' >
                         <button className='btn btn-outline-info border-0 w-75'>Dashboard</button>
                       </Link>
                     )
                 )
             }
-            <Link to={'/realestate/propertyenquiry'} className='text-decoration-none text-info my-1'>
+            <Link to={'/propertyenquiry'} className='text-decoration-none text-info my-1'>
               <button className='btn btn-outline-info border-0 w-75'>Your Enquiry</button>
             </Link>
-            <Link to={'/realestate/user/viewprofile'} >
+            <Link to={'/user/viewprofile'} >
               <button className='btn btn-outline-info border-0 w-75' >View Profile </button>
             </Link>
             <LogOutComponent />
@@ -184,7 +184,7 @@ function BuyerComponent() {
   //     <React.Fragment>
   //       <div className='col d-flex flex-row-reverse py-3 px-4'>
   //         <Link
-  //           to={'/realestate/signup'}
+  //           to={'/signup'}
   //           className='d-flex flex-row-reverse text-decoration-none'
   //         >
   //           <button className='btn bg-white' onClick={e => setForm(!form)}>
@@ -272,7 +272,7 @@ function BuyerComponent() {
       setSendEnquirySeller(true)
     } else {
       if (window.confirm('Login your account')) {
-        navigate('/realestate/login')
+        navigate('/login')
       } else {
         console.log("Not come..!");
       }
@@ -317,12 +317,12 @@ function BuyerComponent() {
             } else {
               if (fetchData.data.data === 'jwt expired' || fetchData.data.data === 'jwt malfarmed') {
                 if (window.confirm('Login again')) {
-                  navigate('/realestate/login')
+                  navigate('/login')
                 }
               } else {
                 if (fetchData.data === 'Add your details') {
                   if (window.confirm('Add your details ?')) {
-                    nxtPage('/realestate/user/editprofile')
+                    nxtPage('/user/editprofile')
                   }
                 } else {
                   error(fetchData.data)
@@ -332,7 +332,7 @@ function BuyerComponent() {
           })
       } else {
         if (window.confirm('Login again')) {
-          navigate('/realestate/login')
+          navigate('/login')
         }
       }
     } else {
@@ -399,7 +399,7 @@ function BuyerComponent() {
   }
 
   const viewProperty = (item) => {
-    navigate(`/realestate/showproperty/${item.propsId}`)
+    navigate(`/showproperty/${item.propsId}`)
     setIndividualProperty(item)
   }
 

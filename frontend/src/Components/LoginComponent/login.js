@@ -113,14 +113,14 @@ class Login extends Component {
                             <div className='row my-2'>
                                 <TextField type={'password'} autoComplete='current-password' label='Enter the password' required variant='standard' id="password" onChange={e => this.HandleChange(e)} />
                             </div>
-                            <Link to={'/realestate/user/sendotp'} className='row py-1'>
+                            <Link to={'/user/sendotp'} className='row py-1'>
                                 <p className='d-flex justify-content-end'>Forgot Password ?</p>
                             </Link>
                             <div className='row my-2 px-3'>
                                 <Button variant='contained' onClick={e => this.Signin(e)} >Login</Button>
                                 <ToastContainer />
                             </div>
-                            <Link to={'/realestate/signup'} className='row text-decoration-none px-3 '>
+                            <Link to={'/signup'} className='row text-decoration-none px-3 '>
                                 <p className='mx-2' data-bs-tooltip='tooltip' title='Click to signup' >Create new account</p>
                             </Link>
                         </form>

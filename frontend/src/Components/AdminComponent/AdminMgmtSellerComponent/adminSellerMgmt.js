@@ -162,7 +162,7 @@ const AdminSellerMgmt = () => {
 
     const loginMust = () => {
         if (window.confirm('Login your account')) {
-            navigate('/realestate/login')
+            navigate('/login')
         }
     }
 
@@ -198,7 +198,7 @@ const AdminSellerMgmt = () => {
     const routing = () => {
         return (
             // <Breadcrumbs aria-label="breadcrumb">
-            //     <Link href='/realestate/dashboard/notifications' underline="hover" >
+            //     <Link href='/dashboard/notifications' underline="hover" >
             //         Dashboard notifications
             //     </Link>
             //     <Typography>Properties</Typography>
@@ -297,14 +297,14 @@ const AdminSellerMgmt = () => {
                                                                             propertyEnquiryCount.data[index].enquiryCount !== 0 ?
                                                                                 (
                                                                                     <button className="btn btn-warning"
-                                                                                        onClick={() => nxtPage(`/realestate/admin/propsenquiry/${item.propsId}`)}
+                                                                                        onClick={() => nxtPage(`/admin/propsenquiry/${item.propsId}`)}
                                                                                         key={index}>
                                                                                         {propertyEnquiryCount.data[index].enquiryCount}
                                                                                     </button>
                                                                                 ) :
                                                                                 (
                                                                                     <button className="btn btn-warning"
-                                                                                        onClick={() => nxtPage(`/realestate/admin/propsenquiry/${item.propsId}`)}
+                                                                                        onClick={() => nxtPage(`/admin/propsenquiry/${item.propsId}`)}
                                                                                         key={index} disabled>
                                                                                         {propertyEnquiryCount.data[index].enquiryCount}
                                                                                     </button>
@@ -333,7 +333,7 @@ const AdminSellerMgmt = () => {
     }
 
     const cartImage = () => {
-        fetch(`http://localhost:3333/realestate/cartimage?city=${city}&state=${stateName}&propertyFor=${propertyFor}`)
+        fetch(`http://localhost:3333/cartimage?city=${city}&state=${stateName}&propertyFor=${propertyFor}`)
             .then(async (res) => {
                 const cart = await res.json();
                 return cart;

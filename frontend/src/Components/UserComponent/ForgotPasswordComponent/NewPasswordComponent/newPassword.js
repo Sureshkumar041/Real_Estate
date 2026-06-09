@@ -58,7 +58,7 @@ const NewPassword = () => {
                         setLoadingAction(false)
                         success(fetchdata.data)
                         setTimeout(() => {
-                            nxtPage(`/realestate/login`)
+                            nxtPage(`/login`)
                         }, 2000)
                     } else {
                         setTimeout(() => {

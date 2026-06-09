@@ -20,19 +20,19 @@ function Seller() {
                     <div className="col-2 bgColor text-center">
                         <h3 className='my-4'>Seller Dashboard </h3>
                         <div className="text-center">
-                            <Link to={'/realestate'} className='row text-decoration-none text-center text-white'>
+                            <Link to={'/'} className='row text-decoration-none text-center text-white'>
                                 <p className='n'>Home</p>
                             </Link>
-                            <Link to={'/realestate/postproperty'} className='row text-decoration-none text-center text-white'>
+                            <Link to={'/postproperty'} className='row text-decoration-none text-center text-white'>
                                 <p className='n'>Post Property</p>
                             </Link>
-                            <Link to={'/realestate/manageproperty'} className='row text-decoration-none text-center text-white'>
+                            <Link to={'/manageproperty'} className='row text-decoration-none text-center text-white'>
                                 <p className='n'>Manage Property</p>
                             </Link>
                             <Link to={'/managebuyer'} className='row text-decoration-none text-center text-white'>
                                 <p className='n'>Manage Buyer</p>
                             </Link>
-                            {/* <Link to={'/realestate/propertyenquiry'} state={{ sellerId: sellerDetails.id }} className='row text-decoration-none text-center text-white'>
+                            {/* <Link to={'/propertyenquiry'} state={{ sellerId: sellerDetails.id }} className='row text-decoration-none text-center text-white'>
                             <p className='n'>Property Enquiry</p>
                         </Link> */}
                             <Dropdown drop='up' className='bgColor row w-100'>
@@ -42,14 +42,14 @@ function Seller() {
                                 <Dropdown.Menu>
                                     {
                                         saveEnquiry.data && saveEnquiry.data.map((item, index) => (
-                                            <Dropdown.Item key={index} onClick={() => nxtPage(`/realestate/seller/propsenquiries/${item.senderId}`)}>
+                                            <Dropdown.Item key={index} onClick={() => nxtPage(`/seller/propsenquiries/${item.senderId}`)}>
                                                 {item.senderName}
                                             </Dropdown.Item>
                                         ))
                                     }
                                 </Dropdown.Menu>
                             </Dropdown>
-                            <Link to={'/realestate/dashboard/notifications'} className='row text-decoration-none text-white'>
+                            <Link to={'/dashboard/notifications'} className='row text-decoration-none text-white'>
                                 <p className='n' >Notifications</p>
                             </Link>
                         </div>

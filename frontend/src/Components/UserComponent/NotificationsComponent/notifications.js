@@ -30,25 +30,25 @@ const Notifications = () => {
                                 <Badge className="px-2 cartImg " badgeContent={notificationsCount.data.data.propertyCount || '0'} max={10} color="primary">
                                     <img src={property} className='img' alt="Something went wrong" />
                                 </Badge>
-                                <Button className="my-3" variant="contained" onClick={() => nxtPage('/realestate/admin/sellermgmt')} >Properties</Button>
+                                <Button className="my-3" variant="contained" onClick={() => nxtPage('/admin/sellermgmt')} >Properties</Button>
                             </div>
                             <div className="col-3">
                                 <Badge className="px-2 cartImg" badgeContent={notificationsCount.data.data.sellerCount -1 || '0'} max={10} color="primary">
                                     <img src={seller} className='img' alt="Something went wrong" />
                                 </Badge>
-                                <Button className="my-3" variant="contained" onClick={() => nxtPage('/realestate/dashboard/usermgmt/Seller')}>Sellers</Button>
+                                <Button className="my-3" variant="contained" onClick={() => nxtPage('/dashboard/usermgmt/Seller')}>Sellers</Button>
                             </div>
                             <div className="col-3">
                                 <Badge className="px-2 cartImg insideOut" badgeContent={notificationsCount.data.data.buyerCount || '0'} max={10} color="primary">
                                     <img src={buyer} className='img' alt="Something went wrong" />
                                 </Badge>
-                                <Button className="my-3 px-4" variant="contained" onClick={() => nxtPage('/realestate/dashboard/usermgmt/Buyer')}> Buyers</Button>
+                                <Button className="my-3 px-4" variant="contained" onClick={() => nxtPage('/dashboard/usermgmt/Buyer')}> Buyers</Button>
                             </div>
                             <div className="col-3">
                                 <Badge className="px-2 cartImg" badgeContent={notificationsCount.data.data.enquiryCount || '0'} max={10} color="primary">
                                     <img src={enquiry} className='img' alt="Something went wrong" />
                                 </Badge>
-                                <Button className="my-3" variant="contained" onClick={() => nxtPage('/realestate/admin/enquiry')}>Enquiries</Button>
+                                <Button className="my-3" variant="contained" onClick={() => nxtPage('/admin/enquiry')}>Enquiries</Button>
                             </div>
                         </div>
                     )
@@ -68,13 +68,13 @@ const Notifications = () => {
                                 <Badge className="px-2 cartImg" badgeContent={notificationsCount.data.data.propertyCount || '0'} max={10} color="primary">
                                     <img src={property} className='img' alt="Something went wrong" />
                                 </Badge>
-                                <Button className="my-3" variant="contained" onClick={() => nxtPage('/realestate/manageproperty')} >Properties</Button>
+                                <Button className="my-3" variant="contained" onClick={() => nxtPage('/manageproperty')} >Properties</Button>
                             </div>
                             <div className="col-3">
                                 <Badge className="px-2 cartImg" badgeContent={notificationsCount.data.data.enquiryCount || '0'} max={10} color="primary">
                                     <img src={enquiry} className='img' alt="Something went wrong" />
                                 </Badge>
-                                <Button className="my-3" variant="contained" onClick={() => nxtPage('/realestate/propertyenquiry')} >Enquiries</Button>
+                                <Button className="my-3" variant="contained" onClick={() => nxtPage('/propertyenquiry')} >Enquiries</Button>
                             </div>
                         </div>
                     )

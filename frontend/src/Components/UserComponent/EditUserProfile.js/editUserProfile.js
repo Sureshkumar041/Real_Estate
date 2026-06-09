@@ -87,13 +87,13 @@ const EditUserProfile = () => {
                 if (res.status >= 199 && res.status < 300) {
                     success(fetchData.data.data)
                     setTimeout(() => {
-                        nxtPage('/realestate/user/viewprofile')
+                        nxtPage('/user/viewprofile')
                     }, 2000)
                 } else {
                     console.log("Error Bad");
                     if (fetchData.data.valid) {
                         if (window.confirm('Login your account')) {
-                            nxtPage('/realestate/login')
+                            nxtPage('/login')
                         }
                     } else {
                         error(fetchData.data.data)
@@ -137,7 +137,7 @@ const EditUserProfile = () => {
                                 </div>
 
                                 <div className="row mx-5 d-gird gap-3">
-                                    <Button variant="outlined" className="col" onClick={() => nxtPage('/realestate/user/viewprofile')} >Cancel</Button>
+                                    <Button variant="outlined" className="col" onClick={() => nxtPage('/user/viewprofile')} >Cancel</Button>
                                     <Button variant="contained" className="col" type="sumbit" >Save Changes</Button>
                                     <ToastContainer />
                                 </div>

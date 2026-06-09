@@ -63,13 +63,13 @@ const PropertyEnquiries = () => {
                         <div style={{ width: '45%', minHeight: '410px', maxHeight: '410px' }} className="bg-white p-2 position-sticky border-0 rounded">
                             <div className="d-flex justify-content-between border shadow-lg p-1">
                                 <Tooltip title='Click to view Profile'>
-                                    <p className="m-1 cp" onClick={() => nxtPage(`/realestate/user/unknowprofile/${message.senderId}`)}>
+                                    <p className="m-1 cp" onClick={() => nxtPage(`/user/unknowprofile/${message.senderId}`)}>
                                         <VscAccount className="text-danger h3 fw-bolder mx-1" />
                                         {message.senderName}
                                     </p>
                                 </Tooltip>
                                 <Tooltip title='Click to view Profile'>
-                                    <p className="m-1 cp" onClick={() => nxtPage(`/realestate/user/unknowprofile/${message.receiverId}`)}>
+                                    <p className="m-1 cp" onClick={() => nxtPage(`/user/unknowprofile/${message.receiverId}`)}>
                                         {message.receiverName}
                                         <VscAccount className="text-danger h3 fw-bolder mx-1" />
                                     </p>
@@ -241,10 +241,10 @@ const PropertyEnquiries = () => {
     const routing = () => {
         return (
             <Breadcrumbs aria-label="breadcrumb">
-                <Link href={'/realestate/dashboard/notifications'} underline="hover" >
+                <Link href={'/dashboard/notifications'} underline="hover" >
                     Dashboard notifications
                 </Link>
-                <Link href={'/realestate/admin/sellermgmt'} underline="hover" >
+                <Link href={'/admin/sellermgmt'} underline="hover" >
                     Properties
                 </Link>
                 <Typography color="text.primary">Property Enquiries </Typography>
@@ -325,7 +325,7 @@ const PropertyEnquiries = () => {
                                                                         ) :
                                                                         (
                                                                             <button className="btn btn-outline-primary"
-                                                                                onClick={() => nxtPage(`/realestate/seller/propsenquiries/${item.senderId}`)}>
+                                                                                onClick={() => nxtPage(`/seller/propsenquiries/${item.senderId}`)}>
                                                                                 Send Reply
                                                                             </button>
                                                                         )
@@ -344,7 +344,7 @@ const PropertyEnquiries = () => {
                             role === 'Admin' ?
                                 (
                                     <Button className="fixed-bottom"
-                                        onClick={() => nxtPage('/realestate/admin/enquiry')}
+                                        onClick={() => nxtPage('/admin/enquiry')}
                                         variant="contained" color="warning"
                                     >
                                         Back
@@ -352,7 +352,7 @@ const PropertyEnquiries = () => {
                                 ) :
                                 (
                                     <Button className="fixed-bottom"
-                                        onClick={() => nxtPage('/realestate/manageproperty')}
+                                        onClick={() => nxtPage('/manageproperty')}
                                         variant="contained" color="warning"
                                     >
                                         Back
