@@ -1,14 +1,16 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
 import LoginScreen from "../Components/LoginComponent/loginscreen";
 
 const AppRoutes = () => {
 
     return (
-        <BrowserRouter>
+        <HashRouter>
+            {/* <BrowserRouter> */}
             <Routes>
                 <Route path="/" element={<LoginScreen />} />
             </Routes>
-        </BrowserRouter>
+            {/* </BrowserRouter> */}
+        </HashRouter>
     )
 }
 
