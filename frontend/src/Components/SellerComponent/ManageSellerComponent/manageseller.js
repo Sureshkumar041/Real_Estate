@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Seller from "../SellerDashComponent/seller";
-import './manageseller.css'
+// import './manageseller.css'
 import { Link, useNavigate } from 'react-router-dom'
 import { Breadcrumbs, Button, Typography } from "@mui/material";
 

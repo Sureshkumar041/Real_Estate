@@ -1,0 +1,536 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    overflow-x: hidden;
+    background: #03050a;
+}
+
+/* ========================================
+   PAGE
+======================================== */
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at top,
+            #111827 0%,
+            #070b16 40%,
+            #03050a 100%);
+}
+
+/* ========================================
+   NOISE TEXTURE
+======================================== */
+
+.noise {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.03;
+
+    background-image:
+        radial-gradient(circle,
+            rgba(255, 255, 255, 0.9) 1px,
+            transparent 1px);
+
+    background-size: 5px 5px;
+}
+
+/* ========================================
+   PERSPECTIVE GRID
+======================================== */
+
+.grid {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.grid::before {
+    content: "";
+    position: absolute;
+    inset: -40%;
+
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.04) 1px,
+            transparent 1px),
+        linear-gradient(90deg,
+            rgba(255, 255, 255, 0.04) 1px,
+            transparent 1px);
+
+    background-size: 60px 60px;
+
+    transform: perspective(900px) rotateX(75deg);
+
+    mask-image: linear-gradient(to bottom,
+            transparent,
+            white 30%,
+            transparent);
+}
+
+/* ========================================
+   GRADIENT ORBS
+======================================== */
+
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    animation: floatOrb 15s ease-in-out infinite alternate;
+}
+
+.orb1 {
+    width: 500px;
+    height: 500px;
+
+    top: -150px;
+    left: -150px;
+
+    background: linear-gradient(135deg,
+            #00d4ff,
+            #4f46e5);
+}
+
+.orb2 {
+    width: 450px;
+    height: 450px;
+
+    top: 80px;
+    right: -100px;
+
+    background: linear-gradient(135deg,
+            #ff3cac,
+            #7c3aed);
+
+    animation-delay: 3s;
+}
+
+.orb3 {
+    width: 400px;
+    height: 400px;
+
+    bottom: -120px;
+    left: 30%;
+
+    background: linear-gradient(135deg,
+            #00f5a0,
+            #00d9f5);
+
+    animation-delay: 6s;
+}
+
+@keyframes floatOrb {
+    from {
+        transform: translateY(0px);
+    }
+
+    to {
+        transform: translateY(-40px);
+    }
+}
+
+/* ========================================
+   GLASS CARD
+======================================== */
+
+.card {
+    position: relative;
+    z-index: 10;
+
+    width: 100%;
+    max-width: 420px;
+
+    padding: 38px;
+
+    border-radius: 28px;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        0 20px 80px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+    animation: fadeIn 0.8s ease;
+}
+
+.card::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(135deg,
+            rgba(255, 255, 255, 0.08),
+            transparent 50%);
+
+    pointer-events: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   HEADER
+======================================== */
+
+.logo {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+
+    color: rgba(255, 255, 255, 0.65);
+
+    margin-bottom: 24px;
+}
+
+.header h1 {
+    font-size: 42px;
+    line-height: 1.05;
+    font-weight: 800;
+
+    color: white;
+
+    margin-bottom: 10px;
+}
+
+.header h1 span {
+    background: linear-gradient(90deg,
+            #00d4ff,
+            #7c3aed,
+            #ff3cac,
+            #00d4ff);
+
+    background-size: 300% auto;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: gradientMove 6s linear infinite;
+}
+
+@keyframes gradientMove {
+    to {
+        background-position: 300% center;
+    }
+}
+
+.header p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    line-height: 1.6;
+
+    margin-bottom: 28px;
+}
+
+/* ========================================
+   FORM FIELDS
+======================================== */
+
+.field {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    color: rgba(255, 255, 255, 0.75);
+}
+
+input {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    color: white;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: all 0.25s ease;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.35);
+}
+
+input:focus {
+    border-color: #00d4ff;
+
+    box-shadow:
+        0 0 0 3px rgba(0, 212, 255, 0.12),
+        0 0 30px rgba(0, 212, 255, 0.15);
+
+    background: rgba(255, 255, 255, 0.06);
+}
+
+/* ========================================
+   PASSWORD FIELD
+======================================== */
+
+.password {
+    position: relative;
+}
+
+.toggle {
+    position: absolute;
+
+    right: 14px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border: none;
+    background: transparent;
+
+    color: #7dd3fc;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+/* ========================================
+   ERRORS
+======================================== */
+
+.error {
+    display: block;
+
+    margin-top: 6px;
+
+    font-size: 12px;
+    color: #f87171;
+}
+
+/* ========================================
+   REMEMBER ME
+======================================== */
+
+.remember-me {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 18px 0 22px;
+}
+
+.con {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    font-size: 13px;
+
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.con input {
+    width: 14px;
+    height: 14px;
+}
+
+.link {
+    text-decoration: none;
+
+    color: #7dd3fc;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    transition: 0.2s;
+}
+
+.link:hover {
+    color: #38bdf8;
+}
+
+/* ========================================
+   BUTTON
+======================================== */
+
+.btn {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+
+    background:
+        linear-gradient(135deg,
+            #00d4ff,
+            #4f46e5);
+
+    box-shadow:
+        0 0 40px rgba(0, 212, 255, 0.25);
+
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 60px rgba(0, 212, 255, 0.45);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* ========================================
+   FLOATING PARTICLES
+======================================== */
+
+.particles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.particle-dot {
+    position: absolute;
+
+    width: 3px;
+    height: 3px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.7);
+
+    animation: floatParticle 8s infinite ease-in-out;
+}
+
+@keyframes floatParticle {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-80px);
+    }
+}
+
+/* ========================================
+   SCROLLBAR
+======================================== */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #03050a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #334155;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 600px) {
+    .card {
+        width: calc(100% - 32px);
+        padding: 28px;
+    }
+
+    .header h1 {
+        font-size: 34px;
+    }
+
+    .remember-me {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .orb1,
+    .orb2,
+    .orb3 {
+        filter: blur(100px);
+    }
+}
+
+/* CSS glow effect */
+/* particle layer */
+.particle-layer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 5;
+}
+
+/* particle dot */
+.particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: cyan;
+    box-shadow: 0 0 8px cyan;
+    transform: translate(-50%, -50%);
+}
