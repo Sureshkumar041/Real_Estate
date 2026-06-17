@@ -1,15 +1,22 @@
 {
   "files": {
-    "main.css": "/Real_Estate/static/css/main.5bf645a5.css",
-    "main.js": "/Real_Estate/static/js/main.a911e71d.js",
+    "main.css": "/Real_Estate/static/css/main.d12195bc.css",
+    "main.js": "/Real_Estate/static/js/main.fc54bbd3.js",
     "static/js/488.dcb52a01.chunk.js": "/Real_Estate/static/js/488.dcb52a01.chunk.js",
+    "static/media/Ahaan.gif": "/Real_Estate/static/media/Ahaan.ce2545ff0f4128e66917.gif",
+    "static/media/wow.gif": "/Real_Estate/static/media/wow.07d8ecf68bdc21a74e2b.gif",
+    "static/media/fa-solid-900.woff2": "/Real_Estate/static/media/fa-solid-900.ce9a3fa740bd60b4ac3b.woff2",
+    "static/media/fa-brands-400.woff2": "/Real_Estate/static/media/fa-brands-400.f276979f97f1cf375d23.woff2",
+    "static/media/error-404.webp": "/Real_Estate/static/media/error-404.5340cfb9cd35cd4ad2cf.webp",
+    "static/media/fa-regular-400.woff2": "/Real_Estate/static/media/fa-regular-400.cfbad32c79d9dda6af4a.woff2",
+    "static/media/fa-v4compatibility.woff2": "/Real_Estate/static/media/fa-v4compatibility.296da06936a3373940c8.woff2",
     "index.html": "/Real_Estate/index.html",
-    "main.5bf645a5.css.map": "/Real_Estate/static/css/main.5bf645a5.css.map",
-    "main.a911e71d.js.map": "/Real_Estate/static/js/main.a911e71d.js.map",
+    "main.d12195bc.css.map": "/Real_Estate/static/css/main.d12195bc.css.map",
+    "main.fc54bbd3.js.map": "/Real_Estate/static/js/main.fc54bbd3.js.map",
     "488.dcb52a01.chunk.js.map": "/Real_Estate/static/js/488.dcb52a01.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5bf645a5.css",
-    "static/js/main.a911e71d.js"
+    "static/css/main.d12195bc.css",
+    "static/js/main.fc54bbd3.js"
   ]
 }
