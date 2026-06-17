@@ -1,0 +1,42 @@
+.home {
+  padding: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.wow-gif-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  .wow-gif {
+    width: 60%;
+    aspect-ratio: 1/.5;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home {
+    padding: 16px;
+  }
+
+
+  .wow-gif {
+    width: 80% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .home {
+    padding: 12px;
+  }
+
+  .wow-gif {
+    width: 80% !important;
+  }
+}

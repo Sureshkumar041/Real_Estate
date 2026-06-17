@@ -12,3 +12,133 @@ code {
     monospace;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.layout {
+  min-height: 100vh;
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+}
+
+/* Header */
+.header {
+  position: sticky;
+  top: 20px;
+  z-index: 1000;
+  height: 72px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  backdrop-filter: blur(10px);
+  margin-inline: 25px;
+  border-radius: 10px;
+  background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+  box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.nav {
+  display: flex;
+  gap: 12px;
+}
+
+.nav-btn {
+  border: none;
+  background: transparent;
+  padding: 10px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-btn:hover {
+  background-image: linear-gradient(120deg, #639efd 0%, #6ac9f5 100%);
+  color: #fff;
+}
+
+.nav-btn.active {
+  background-image: linear-gradient(120deg, #639efd 0%, #6ac9f5 100%);
+  color: white;
+}
+
+.menu-btn {
+  display: none;
+  border: none;
+  background: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+/* Main Content */
+.main-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px;
+  height: calc(100vh - 72px);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .header {
+    padding: 0 16px;
+    height: 64px;
+  }
+
+  .logo {
+    font-size: 1rem;
+  }
+
+  /* .nav {
+    gap: 4px;
+  }
+
+  .nav-btn {
+    padding: 8px 10px;
+    font-size: 0.875rem;
+  } */
+
+  .menu-btn {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 20px;
+    width: 200px;
+    flex-direction: column;
+    background: white;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .nav-btn {
+    width: 100%;
+    text-align: left;
+  }
+
+  .main-content {
+    padding: 16px;
+  }
+}

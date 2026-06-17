@@ -1,20 +1,35 @@
-import { useEffect, useRef, useState } from "react";
-// import "./loginScreen.css";
+import { useContext, useEffect, useRef, useState } from "react";
 import "./style.css";
+import { useFormik } from "formik";
+import { LoginSchema } from "../../common/formValidation";
+import { AuthContext } from "../../contexts/AuthContext";
+import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
+
 
 export default function LoginScreen() {
-    const [form, setForm] = useState({
-        email: "",
-        password: "",
-    });
-
-    const [errors, setErrors] = useState({});
+    const navigate = useNavigate()
+    const { userDetail, setUserDetail } = useContext(AuthContext)
     const [showPassword, setShowPassword] = useState(false);
-
     const formRef = useRef(null);
     const [particles, setParticles] = useState([]);
-
     const particlesRef = useRef([]);
+
+    const formik = useFormik({
+        initialValues: {
+            email: "",
+            password: ""
+        },
+        validationSchema: LoginSchema,
+        onSubmit: (v) => {
+            console.log("v: ", v)
+            setUserDetail(v)
+            toast.success("Login Successfully.")
+            navigate("/home")
+            localStorage.setItem("token", JSON.stringify(v))
+            return true
+        }
+    })
 
     const handleMouseMove = (e) => {
         const rect = formRef.current.getBoundingClientRect();
@@ -61,33 +76,6 @@ export default function LoginScreen() {
 
         return () => cancelAnimationFrame(animationId);
     }, []);
-
-    const handleChange = (e) => {
-        setForm({ ...form, [e.target.name]: e.target.value });
-    };
-
-    const validate = () => {
-        const newErrors = {};
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-        if (!form.email) newErrors.email = "Email required";
-        else if (!emailRegex.test(form.email))
-            newErrors.email = "Invalid email";
-
-        if (!form.password) newErrors.password = "Password required";
-        else if (form.password.length < 6)
-            newErrors.password = "Min 6 characters";
-
-        setErrors(newErrors);
-        return Object.keys(newErrors).length === 0;
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (!validate()) return;
-
-        console.log("LOGIN:", form);
-    };
 
     const getGreeting = () => {
         const hour = new Date().getHours();
@@ -137,8 +125,8 @@ export default function LoginScreen() {
             </div>
 
             <div className="card" ref={formRef}>
-                <div className="header">
-                    <div className="logo">{getGreeting()}</div>
+                <div className="greeting-container">
+                    <div className="greeting">{getGreeting()}</div>
 
                     <h1>
                         Welcome <span>Back</span>
@@ -146,27 +134,30 @@ export default function LoginScreen() {
 
                     <p>Access your intelligent workspace.</p>
                 </div>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={formik.handleSubmit}>
                     <div className="field">
                         <label>Email</label>
                         <input
                             name="email"
-                            value={form.email}
-                            onChange={handleChange}
+                            value={formik.values.email}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
                             placeholder="you@company.com"
                         />
-                        {errors.email && <span className="error">{errors.email}</span>}
+                        {formik.touched.email && formik.errors.email && (
+                            <span className="error">{formik.errors.email}</span>
+                        )}
                     </div>
-
                     <div className="field">
                         <label>Password</label>
 
                         <div className="password">
                             <input
                                 name="password"
+                                value={formik.values.password}
                                 type={showPassword ? "text" : "password"}
-                                value={form.password}
-                                onChange={handleChange}
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
                                 placeholder="••••••••"
                             />
 
@@ -179,8 +170,8 @@ export default function LoginScreen() {
                             </button>
                         </div>
 
-                        {errors.password && (
-                            <span className="error">{errors.password}</span>
+                        {formik.touched.password && formik.errors.password && (
+                            <span className="error">{formik.errors.password}</span>
                         )}
                     </div>
 
