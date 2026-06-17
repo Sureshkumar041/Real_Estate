@@ -24,7 +24,9 @@ export default function LoginScreen() {
         onSubmit: (v) => {
             console.log("v: ", v)
             setUserDetail(v)
-            toast.success("Login Successfully.")
+            toast.success("Login Successfully.", {
+                position: "top-right"
+            })
             navigate("/home")
             localStorage.setItem("token", JSON.stringify(v))
             return true
