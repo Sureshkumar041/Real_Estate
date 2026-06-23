@@ -1,9 +1,12 @@
 import { AuthProvider } from "../contexts/AuthContext"
+import { ThemeProvider } from "../contexts/ThemeContext";
 
 const AppProvider = ({ children }) => {
     return (
         <AuthProvider>
-            {children}
+            <ThemeProvider>
+                {children}
+            </ThemeProvider>
         </AuthProvider>
     )
 }

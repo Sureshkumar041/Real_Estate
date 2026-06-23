@@ -22,13 +22,12 @@ export default function LoginScreen() {
         },
         validationSchema: LoginSchema,
         onSubmit: (v) => {
-            console.log("v: ", v)
-            setUserDetail(v)
+            setUserDetail({ email: v?.email })
             toast.success("Login Successfully.", {
                 position: "top-right"
             })
             navigate("/home")
-            localStorage.setItem("token", JSON.stringify(v))
+            localStorage.setItem("token", JSON.stringify({ email: v?.email }))
             return true
         }
     })

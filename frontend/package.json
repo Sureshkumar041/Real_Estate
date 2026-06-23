@@ -1,7 +1,7 @@
 {
   "name": "ourwebsite",
   "version": "0.1.0",
-  "homepage": "https://sureshkumar041.github.io/Real_Estate",
+  "homepage": "https://sureshkumar041.github.io/",
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
@@ -13,6 +13,7 @@
     "@testing-library/user-event": "^14.6.1",
     "bootstrap": "^5.3.8",
     "formik": "^2.4.9",
+    "framer-motion": "^12.40.0",
     "node-cache": "^5.1.2",
     "react": "^19.2.7",
     "react-bootstrap": "^2.10.10",

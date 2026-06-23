@@ -5,6 +5,8 @@ import ProtectedRoute from "./protectedRoutes";
 import DashboardPage from "../page/dashboard";
 import Layout from "../layout";
 import PageNotFound from "../page/pageNotFound";
+import FileExplorer from "../page/namaste/react/hard/fileExplorer/index"
+// /home/suresh/Project/Real_Estate/frontend/src/page/namaste/react/hard/fileExplorer/index.jsx
 
 // HashRouter
 // Add HashRouter before going to deploy FE
@@ -12,7 +14,7 @@ import PageNotFound from "../page/pageNotFound";
 const AppRoutes = () => {
 
     return (
-        <HashRouter>
+        <BrowserRouter>
             <Routes>
                 <Route path="/" element={<LoginScreen />} />
                 <Route element={<Layout />}>
@@ -26,10 +28,15 @@ const AppRoutes = () => {
                             <DashboardPage />
                         </ProtectedRoute>
                     } />
+                    <Route path="/confluence" element={
+                        <ProtectedRoute>
+                            <FileExplorer />
+                        </ProtectedRoute>
+                    } />
                     <Route path="*" element={<PageNotFound />} />
                 </Route>
             </Routes>
-        </HashRouter>
+        </BrowserRouter>
     )
 }
 

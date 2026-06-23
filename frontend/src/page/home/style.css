@@ -20,6 +20,21 @@
   }
 }
 
+.hero-vid-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  .hero-vid {
+    width: 50%;
+    aspect-ratio: 1/.5;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+}
+
 @media (max-width: 768px) {
   .home {
     padding: 16px;
