@@ -3,10 +3,10 @@ import PageNotFoundImg from "../../assets/image/error-404.webp"
 
 const PageNotFound = () => {
     return (
-        <div className="home">
+        <div className="not-page-root">
 
-            <div className="wow-gif-container">
-                <img className="wow-gif" src={PageNotFoundImg} alt="gif" />
+            <div className="not-found-page-container">
+                <img className="not-found-img" src={PageNotFoundImg} alt="gif" />
             </div>
 
         </div>

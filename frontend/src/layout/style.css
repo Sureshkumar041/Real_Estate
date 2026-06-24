@@ -22,13 +22,30 @@
     }
 }
 
+.logout-btn-container {
+    border: none;
+    background: transparent;
+    border-radius: 25px;
+    font-size: 22px;
+    display: none;
+    padding: 8px;
+
+    &:hover {
+        background-color: var(--hover);
+    }
+}
+
+.logout-btn-icon {
+    color: var(--text);
+}
+
 .logout-btn {
     background: transparent;
     border: none;
-    border-radius: 25px;
+    border-radius: 6px;
     padding: 12px 15px;
     color: var(--text);
-    
+
     &:hover {
         background-color: var(--hover);
     }
@@ -46,4 +63,20 @@
     flex-direction: row;
     align-items: center;
     gap: 12px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .header-theme-logout {
+        order: 3;
+    }
+
+    .logout-btn-container {
+        display: flex;
+    }
+
+
+    .logout-btn {
+        display: none;
+    }
 }

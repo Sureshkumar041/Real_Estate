@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
+import { Link, useResolvedPath } from "react-router-dom";
 import "./style.css";
+import { useEffect, useRef, useState } from "react";
 
 const menuItems = [
     {
@@ -23,35 +24,72 @@ const menuItems = [
         // ],
     },
     {
-        title: "Content",
-        link: "/confluence",
+        title: "File Explorer",
+        link: "/file-explorer",
     },
 ];
 
-function MenuItem({ item }) {
-    return (
-        <li className={item.children ? "has-children" : ""}>
-            <Link to={item.link || "#"}>{item.title}</Link>
 
-            {item.children && (
-                <ul className="submenu">
-                    {item.children.map((child, index) => (
-                        <MenuItem key={index} item={child} />
+export default function Navbar({ data }) {
+    const [menuOpen, setMenuOpen] = useState(false);
+    const navRef = useRef(null), menuBtnRef = useRef(null),
+        pathName = useResolvedPath();
+
+
+    function MenuItem({ item }) {
+        return (
+            <li className={item.children ? "has-children" : ""}>
+                <Link to={item.link || "#"}
+                    className={pathName.pathname.includes(item.link) ? "active-link" : ""}
+                    onClick={() => {
+                        setMenuOpen(!menuOpen)
+                    }}>{item.title}</Link>
+
+                {item.children && (
+                    <ul className="submenu">
+                        {item.children.map((child, index) => (
+                            <MenuItem key={index} item={child} />
+                        ))}
+                    </ul>
+                )}
+            </li>
+        );
+    }
+
+    useEffect(() => {
+        function handleClickOutside(event) {
+            if (
+                navRef.current &&
+                !navRef.current.contains(event.target) &&
+                !menuBtnRef.current?.contains(event.target)
+            ) {
+                setMenuOpen(false);
+            }
+        }
+
+        document.addEventListener("mousedown", handleClickOutside);
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
+
+    return (
+        <div className="navbar-container">
+            <button
+                ref={menuBtnRef}
+                className="hammer-btn"
+                onClick={() => setMenuOpen(!menuOpen)}
+            >
+                ☰
+            </button>
+            <nav ref={navRef} className={`navbar ${menuOpen ? "active" : ""}`}>
+                <ul className="menu">
+                    {menuItems.map((item, index) => (
+                        <MenuItem key={index} item={item} />
                     ))}
                 </ul>
-            )}
-        </li>
-    );
-}
-
-export default function Navbar() {
-    return (
-        <nav className="navbar">
-            <ul className="menu">
-                {menuItems.map((item, index) => (
-                    <MenuItem key={index} item={item} />
-                ))}
-            </ul>
-        </nav>
+            </nav>
+        </div>
     );
 }

@@ -1,0 +1,31 @@
+.not-page-root {
+    flex: 1;
+    display: flex;
+}
+
+.not-found-page-container {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .not-found-img {
+        width: 45%;
+        aspect-ratio: 1/.5;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .not-found-img {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .not-found-img {
+        width: 100% !important;
+    }
+}

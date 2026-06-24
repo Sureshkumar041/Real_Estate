@@ -14,7 +14,7 @@ import FileExplorer from "../page/namaste/react/hard/fileExplorer/index"
 const AppRoutes = () => {
 
     return (
-        <BrowserRouter>
+        <HashRouter>
             <Routes>
                 <Route path="/" element={<LoginScreen />} />
                 <Route element={<Layout />}>
@@ -28,7 +28,7 @@ const AppRoutes = () => {
                             <DashboardPage />
                         </ProtectedRoute>
                     } />
-                    <Route path="/confluence" element={
+                    <Route path="/file-explorer" element={
                         <ProtectedRoute>
                             <FileExplorer />
                         </ProtectedRoute>
@@ -36,7 +36,7 @@ const AppRoutes = () => {
                     <Route path="*" element={<PageNotFound />} />
                 </Route>
             </Routes>
-        </BrowserRouter>
+        </HashRouter>
     )
 }
 
