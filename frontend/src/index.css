@@ -146,6 +146,10 @@ code {
   --mobile-menu: #cfd8dc;
   --mobile-menu-hover: #fafafa7d;
   --text-muted: #27241f80;
+  --card-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.1),
+    0 4px 12px rgba(0, 0, 0, 0.08);
+  --card: #fff;
 }
 
 .dark {
@@ -155,7 +159,11 @@ code {
   --submenu-text: #fff;
   --mobile-menu: #9e9e9e;
   --mobile-menu-hover: #d1d1d1b0;
-  --text-muted: #fdfbf780
+  --text-muted: #fdfbf780;
+  --card-shadow:
+    0 0 20px rgba(255, 255, 255, .3);
+  --card: #3e3d40;
+
 }
 
 body {
@@ -171,6 +179,20 @@ body {
   border: none;
   cursor: pointer;
   font-size: 32px;
+}
+
+.green-btn {
+  background: #66C17B;
+}
+
+.grey-btn {
+  color: #000 !important;
+  background: #C9D6DC;
+}
+
+.red-btn {
+  color: #fff;
+  background: #E95453;
 }
 
 .icon {

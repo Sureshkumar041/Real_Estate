@@ -1,14 +1,19 @@
 .root {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    row-gap: 20px;
+    row-gap: 25px;
+    padding: 20px;
+}
+
+.parent-conatainer,
+.form-container {
+    width: 40% !important;
 }
 
 .file-explorer-container {
-
     &.parent-conatainer {
-        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-        width: 25%;
+        box-shadow: var(--card-shadow);
         padding: 10px;
     }
 
@@ -37,8 +42,6 @@
         column-gap: 4px;
     }
 
-    .doc-name-section {}
-
     .folder-view,
     .fol-action-icon {
         cursor: pointer;
@@ -51,7 +54,38 @@
 
 .form-container {
 
+    .doc-form {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+
     label {
         font-size: 1.5rem;
+        color: var(--text);
+    }
+
+    input {
+        border: 1px solid var(--text-muted);
+        color: var(--text);
+    }
+
+    input::placeholder {
+        color: var(--text-muted)
+    }
+
+    .doc-btn-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .parent-conatainer,
+    .form-container {
+        width: 100% !important;
     }
 }

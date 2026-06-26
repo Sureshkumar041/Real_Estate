@@ -187,7 +187,7 @@ export default function LoginScreen() {
                         </a>
                     </div>
 
-                    <button className="btn" type="submit">
+                    <button className="btn login-btn" type="submit">
                         Sign in
                     </button>
                 </form>

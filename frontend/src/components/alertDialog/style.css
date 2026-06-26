@@ -1,0 +1,22 @@
+.dialog-section {
+    .MuiDialog-paper {
+        background: var(--card) !important;
+        color: var(--text) !important;
+    }
+
+    .MuiDialogContent-root {
+
+        .MuiDialogContentText-root {
+            color: var(--text-muted) !important;
+        }
+    }
+
+    .dialog-action-container {
+        justify-content: right !important;
+
+        button {
+            width: auto !important;
+            border-radius: 4px !important;
+        }
+    }
+}
