@@ -10,6 +10,7 @@ import FileExplorer from "../page/namaste/react/hard/fileExplorer/index"
 
 // HashRouter
 // Add HashRouter before going to deploy FE
+//   "homepage": "https://sureshkumar041.github.io/Real_Estate",
 
 const AppRoutes = () => {
 
