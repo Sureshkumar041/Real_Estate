@@ -3,13 +3,13 @@ import "./style.css";
 import { useFormik } from "formik";
 import { LoginSchema } from "../../common/formValidation";
 import { AuthContext } from "../../contexts/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 
 
 export default function LoginScreen() {
     const navigate = useNavigate()
-    const { userDetail, setUserDetail } = useContext(AuthContext)
+    const { setUserDetail } = useContext(AuthContext)
     const [showPassword, setShowPassword] = useState(false);
     const formRef = useRef(null);
     const [particles, setParticles] = useState([]);
@@ -182,9 +182,9 @@ export default function LoginScreen() {
                             Remember me
                         </label>
 
-                        <a href="#" className="link">
+                        <Link className="link">
                             Forgot password?
-                        </a>
+                        </Link>
                     </div>
 
                     <button className="btn login-btn" type="submit">

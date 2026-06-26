@@ -4,7 +4,7 @@ import { CiLight, CiDark } from "react-icons/ci";
 import { ThemeContext } from "../../contexts/ThemeContext";
 
 export default function ThemeToggle() {
-    const { isDark, setIsDark } = useContext(ThemeContext);
+    const { setIsDark } = useContext(ThemeContext);
     const [dark, setDark] = useState(() => {
         return localStorage.getItem("theme") === "dark";
     });;
@@ -13,8 +13,8 @@ export default function ThemeToggle() {
         document.documentElement.classList.toggle("dark", dark);
 
         localStorage.setItem("theme", dark ? "dark" : "light");
-        setIsDark(dark)
-    }, [dark]);
+        // setIsDark(dark)
+    }, [dark, setIsDark]);
 
     return (
         <button className="theme-btn" onClick={() => setDark(!dark)}>

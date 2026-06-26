@@ -1,4 +1,4 @@
-import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import LoginScreen from "../page/login/loginscreen";
 import HomePage from "../page/home";
 import ProtectedRoute from "./protectedRoutes";
@@ -11,6 +11,7 @@ import FileExplorer from "../page/namaste/react/hard/fileExplorer/index"
 // HashRouter
 // Add HashRouter before going to deploy FE
 //   "homepage": "https://sureshkumar041.github.io/Real_Estate",
+// BrowserRouter
 
 const AppRoutes = () => {
 
