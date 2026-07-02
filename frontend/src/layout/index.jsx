@@ -8,7 +8,6 @@ import PaperPlane from "../assets/gif/Paperplane.gif"
 import ThemeToggle from "../Components/ThemeToggle";
 import { GoSignOut } from "react-icons/go";
 import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 
