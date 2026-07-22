@@ -11,7 +11,7 @@ export const AppDataSource = new DataSource({
         rejectUnauthorized: false,
     },
     synchronize: true,
-    logging: true,
+    logging: false, // Set true if need DB logs
     entities: [User, Expense, Category],
     migrations: [],
 });
