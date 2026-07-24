@@ -1,21 +1,47 @@
 import { Request, Response } from "express";
-import * as authService from "../services/auth.service";
+import { ResponseUtil } from "../utils/response";
+import authService from "../services/auth.service";
 
 
 // REGISTER
 export const register = async (req: Request, res: Response) => {
     try {
-        return await authService.register(req, res);
-    } catch (err: any) {
-        res.status(500).json({ message: err?.message });
+        const result = await authService.register(req.body);
+
+        return ResponseUtil.success(
+            res,
+            "Registered successfully",
+            result,
+            201
+        )
+    } catch (error: any) {
+        return ResponseUtil.error(
+            res,
+            error.message,
+            400
+        );
     }
 };
 
 // LOGIN
 export const login = async (req: Request, res: Response) => {
     try {
-        return await authService.login(req, res);
-    } catch (err) {
-        res.status(500).json({ message: "Server error" });
+
+        const result = await authService.login(req.body);
+
+        return ResponseUtil.success(
+            res,
+            "Login successful",
+            result
+        );
+
+    } catch (err: any) {
+
+        return ResponseUtil.error(
+            res,
+            err.message,
+            err.statusCode || 500
+        );
+
     }
 };

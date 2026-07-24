@@ -8,6 +8,7 @@ import {
 } from "typeorm";
 import { Expense } from "./Expense";
 import { Category } from "./Category";
+import { Status } from "../constants/enums";
 
 @Entity()
 export class User {
@@ -24,14 +25,21 @@ export class User {
     @Column({ unique: true })
     email!: string;
 
-    @Column()
+    @Column({ select: false })
     password!: string;
 
-    @Column({ default: "active" })
-    status!: string;
+    @Column({
+        type: "enum",
+        enum: Status,
+        default: Status.ACTIVE,
+    })
+    status!: Status;
 
     @CreateDateColumn({ type: "timestamptz" })
     createdAt!: Date;
+
+    @CreateDateColumn({ type: "timestamptz" })
+    updatedAt!: Date;
 
     @OneToMany(() => Category, (category) => category.user)
     categories!: Category[];

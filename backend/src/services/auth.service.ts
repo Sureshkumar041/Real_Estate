@@ -6,15 +6,24 @@ import { generateToken } from "../utils/jwt";
 
 const userRepo = AppDataSource.getRepository(User);
 
+class AuthService {
 
-export const register = async (req: Request, res: Response) => {
-    try {
-        const { name, email, password } = req.body;
+    async register(data: {
+        name: string;
+        email: string;
+        password: string;
+    }) {
+        const { name, email, password } = data;
 
-        const existingUser = await userRepo.findOne({ where: { email } });
+        const existingUser = await userRepo.findOne({
+            where: { email }
+        });
 
         if (existingUser) {
-            return res.status(400).json({ message: "Email already exists" });
+            throw {
+                statusCode: 400,
+                message: "Email already exists"
+            };
         }
 
         const hashedPassword = await hashPassword(password);
@@ -29,48 +38,52 @@ export const register = async (req: Request, res: Response) => {
 
         const token = generateToken(user.userId);
 
-        return res.json({
-            statusCode: 200,
-            status: "success",
-            message: "Registered successfully",
-            data: {
-                token
-            }
-        });
-    } catch (error: any) {
-        console.log("Error in Register API: ", error);
-        return res.status(500).send({ statusCode: 500, status: "error", message: error.message });
+        return {
+            token,
+        };
     }
-}
 
-export const login = async (req: Request, res: Response) => {
-    try {
-        const { email, password } = req.body;
+    async login(data: {
+        email: string;
+        password: string;
+    }) {
+        const { email, password } = data;
 
-        const user = await userRepo.findOne({ where: { email } });
+        const user = await userRepo.findOne({
+            where: { email },
+            select: {
+                id: true,
+                userId: true,
+                name: true,
+                email: true,
+                password: true,
+            },
+        });
 
         if (!user) {
-            return res.status(400).json({ message: "Invalid credentials" });
+            throw {
+                statusCode: 401,
+                message: "Invalid email or password",
+            };
         }
 
         const isMatch = await comparePassword(password, user.password);
 
         if (!isMatch) {
-            return res.status(400).json({ message: "Invalid credentials" });
+            throw {
+                statusCode: 401,
+                message: "Invalid email or password",
+            };
         }
 
         const token = generateToken(user.userId);
 
-        return res.json({
+        return {
             token,
-            user: {
-                id: user.id,
-                name: user.name,
-                email: user.email,
-            },
-        });
-    } catch (error: any) {
-        console.log("Error in Register API: ", error);
-        return res.status(500).send({ statusCode: 500, status: "error", message: error.message });
+        };
+
     }
+
 }
+
+export default new AuthService();

@@ -5,6 +5,7 @@ import {
     CreateDateColumn,
     ManyToOne,
     Generated,
+    JoinColumn,
 } from "typeorm";
 import { User } from "./User";
 import { Category } from "./Category";
@@ -18,17 +19,24 @@ export class Expense {
     @Generated('increment')
     expenseId!: number;
 
-    @Column()
+    @Column({ length: 150 })
     title!: string;
 
-    @Column("decimal")
+    @Column({
+        type: "decimal",
+        precision: 10,
+        scale: 2,
+    })
     amount!: number;
 
     @Column({ type: "date" })
-    date!: string;
-
-    @Column({ type: "date" })
     expenseDate!: string;
+
+    @Column({ type: 'integer' })
+    userId!: number;
+
+    @Column({ type: 'integer' })
+    categoryId!: number;
 
     @CreateDateColumn()
     createdAt!: Date;
@@ -36,8 +44,16 @@ export class Expense {
     @ManyToOne(() => User, (user) => user.expenses, {
         onDelete: "CASCADE",
     })
+    @JoinColumn({
+        name: "userId",
+        referencedColumnName: "userId",
+    })
     user!: User;
 
     @ManyToOne(() => Category, (category) => category.expenses)
+    @JoinColumn({
+        name: "categoryId",
+        referencedColumnName: "categoryId",
+    })
     category!: Category;
 }
