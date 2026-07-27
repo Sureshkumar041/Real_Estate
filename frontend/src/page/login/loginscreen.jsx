@@ -5,6 +5,7 @@ import { LoginSchema } from "../../common/formValidation";
 import { AuthContext } from "../../contexts/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import { loginService } from "../../service/auth.service";
 
 
 export default function LoginScreen() {
@@ -21,13 +22,23 @@ export default function LoginScreen() {
             password: ""
         },
         validationSchema: LoginSchema,
-        onSubmit: (v) => {
-            setUserDetail({ email: v?.email })
-            toast.success("Login Successfully.", {
-                position: "top-right"
-            })
-            navigate("/home")
-            localStorage.setItem("token", JSON.stringify({ email: v?.email }))
+        onSubmit: async (v) => {
+
+            const res = await loginService(v);
+
+            if (res?.success) {
+                setUserDetail({ email: v?.email })
+                navigate("/home")
+                localStorage.setItem("token", JSON.stringify({ email: v?.email }))
+
+                toast.success("Login Successfully.", {
+                    position: "top-right"
+                })
+            } else {
+                toast.error(res?.message, {
+                    position: "top-right"
+                })
+            }
             return true
         }
     })
