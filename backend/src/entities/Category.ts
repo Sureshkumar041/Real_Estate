@@ -10,6 +10,7 @@ import {
 } from "typeorm";
 import { User } from "./User";
 import { Expense } from "./Expense";
+import { CategoryStatus } from "../constants/enums";
 
 @Entity()
 export class Category {
@@ -26,8 +27,12 @@ export class Category {
     @Column({ type: 'integer' })
     userId!: number;
 
-    @Column({ default: "active" })
-    status!: string;
+    @Column({
+        type: "enum",
+        enum: CategoryStatus,
+        default: CategoryStatus.ACTIVE,
+    })
+    status!: CategoryStatus;
 
     @CreateDateColumn({ type: "timestamptz" })
     createdAt!: Date;

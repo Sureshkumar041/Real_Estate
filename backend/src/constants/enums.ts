@@ -6,4 +6,5 @@ export enum Status {
 export enum CategoryStatus {
     ACTIVE = "active",
     INACTIVE = "inactive",
+    DELETE = "deleted"
 }
