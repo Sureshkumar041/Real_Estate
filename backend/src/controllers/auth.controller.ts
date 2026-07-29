@@ -26,8 +26,14 @@ export const register = async (req: Request, res: Response) => {
 // LOGIN
 export const login = async (req: Request, res: Response) => {
     try {
-
         const result = await authService.login(req.body);
+
+        res.cookie("accessToken", result?.token, {
+            httpOnly: true,
+            secure: false,  // true in production (HTTPS)
+            sameSite: "lax",
+            maxAge: 24 * 60 * 60 * 1000,
+        })
 
         return ResponseUtil.success(
             res,
@@ -43,5 +49,22 @@ export const login = async (req: Request, res: Response) => {
             err.statusCode || 500
         );
 
+    }
+};
+
+export const logout = (req: Request, res: Response) => {
+    try {
+        res.clearCookie("accessToken");
+
+        return ResponseUtil.success(
+            res,
+            "Logout successfully"
+        );
+    } catch (error: any) {
+        return ResponseUtil.error(
+            res,
+            error.message,
+            error.statusCode || 500
+        );
     }
 };
