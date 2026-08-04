@@ -14,21 +14,21 @@ export const authMiddleware = async (
 
     try {
 
-        // const authHeader = req.headers.authorization;
+        const authHeader = req.headers.authorization;
 
-        // if (!authHeader) {
-        //     return res.status(401).json({
-        //         message: "Authorization header missing"
-        //     });
-        // }
-
-        // const token = authHeader.split(" ")[1];
-
-        const token = req.cookies.accessToken;
-
-        if (!token) {
-            return ResponseUtil.error(res, "Unauthorized", 401);
+        if (!authHeader) {
+            return res.status(401).json({
+                message: "Authorization header missing"
+            });
         }
+
+        const token = authHeader.split(" ")[1];
+
+        // const token = req.cookies.accessToken;
+
+        // if (!token) {
+        //     return ResponseUtil.error(res, "Unauthorized", 401);
+        // }
 
         const payload = verifyToken(token);
 
