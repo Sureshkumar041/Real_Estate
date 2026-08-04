@@ -6,6 +6,7 @@ import DashboardPage from "../page/dashboard";
 import Layout from "../layout";
 import PageNotFound from "../page/pageNotFound";
 import FileExplorer from "../page/namaste/react/hard/fileExplorer/index"
+import CategoryList from "../page/category/index";
 // /home/suresh/Project/Real_Estate/frontend/src/page/namaste/react/hard/fileExplorer/index.jsx
 
 // HashRouter
@@ -33,6 +34,11 @@ const AppRoutes = () => {
                     <Route path="/file-explorer" element={
                         <ProtectedRoute>
                             <FileExplorer />
+                        </ProtectedRoute>
+                    } />
+                    <Route path="/service" element={
+                        <ProtectedRoute>
+                            <CategoryList />
                         </ProtectedRoute>
                     } />
                     <Route path="*" element={<PageNotFound />} />
