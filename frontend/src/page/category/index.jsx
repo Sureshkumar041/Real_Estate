@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { getCategoriesService } from "../../service/category.service";
+import "./style.css";
 
 const CategoryList = () => {
 
@@ -12,8 +13,8 @@ const CategoryList = () => {
         setLoading(true);
 
         const res = await getCategoriesService({
-            status: "active",
-            sortOrder: "DESC",
+            // status: "active",
+            // sortOrder: "DESC",
         });
 
         if (res.success) {
@@ -30,42 +31,59 @@ const CategoryList = () => {
     }, []);
 
     return (
-        <div className="container">
-            <h2>Category List</h2>
+        <div className="category-list">
+            <div className="card">
+                <div className="card-header">
+                    <h2>Category List</h2>
+                    <button className="add-btn">+ Add Category</button>
+                </div>
 
-            {loading ? (
-                <p>Loading...</p>
-            ) : (
-                <table className="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Category Name</th>
-                            <th>Status</th>
-                            <th>Created At</th>
-                        </tr>
-                    </thead>
+                <div className="table-container">
+                    {
+                        loading ? <p>Loading...</p> :
+                            <table className="category-table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Category Name</th>
+                                        <th>Status</th>
+                                        <th>Created Date</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
 
-                    <tbody>
-                        {categories.length > 0 ? (
-                            categories.map((item, index) => (
-                                <tr key={item.categoryId}>
-                                    <td>{index + 1}</td>
-                                    <td>{item.name}</td>
-                                    <td>{item.status}</td>
-                                    <td>{new Date(item.createdAt).toLocaleDateString()}</td>
-                                </tr>
-                            ))
-                        ) : (
-                            <tr>
-                                <td colSpan="4" className="text-center">
-                                    No categories found
-                                </td>
-                            </tr>
-                        )}
-                    </tbody>
-                </table>
-            )}
+                                <tbody>
+                                    {categories.map((item, index) => (
+                                        <tr key={item.categoryId}>
+                                            <td>{index + 1}</td>
+                                            <td>{item.name}</td>
+
+                                            <td>
+                                                <span className={`status ${item.status}`}>
+                                                    {item.status}
+                                                </span>
+                                            </td>
+
+                                            <td>
+                                                {new Date(item.createdAt).toLocaleDateString()}
+                                            </td>
+
+                                            <td>
+                                                <button className="action-btn edit-btn">
+                                                    Edit
+                                                </button>
+
+                                                <button className="action-btn delete-btn">
+                                                    Delete
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                    }
+                </div>
+            </div>
         </div>
     );
 };

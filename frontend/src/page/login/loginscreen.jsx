@@ -29,7 +29,7 @@ export default function LoginScreen() {
             if (res?.success) {
                 setUserDetail({ email: v?.email })
                 navigate("/home")
-                localStorage.setItem("token", JSON.stringify({ email: v?.email }))
+                localStorage.setItem("token", JSON.stringify(res?.data?.token))
 
                 toast.success("Login Successfully.", {
                     position: "top-right"

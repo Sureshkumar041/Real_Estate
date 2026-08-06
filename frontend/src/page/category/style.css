@@ -1,0 +1,134 @@
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.category-list {
+    width: 100%;
+
+    .card {
+        background: var(--bg);
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        width: 100% !important;
+        max-width: none !important;
+    }
+}
+
+.card-header {
+    background: #0d6efd;
+    color: #fff;
+    padding: 18px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-header h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.add-btn {
+    background: #fff;
+    color: #0d6efd;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.add-btn:hover {
+    background: #e9ecef;
+}
+
+.table-container {
+    overflow-x: auto;
+    padding: 20px;
+}
+
+.category-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+.category-table thead {
+    background: var(--bg);
+    color: var(--text);
+}
+
+.category-table th,
+.category-table td {
+    padding: 14px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+/* .category-table tbody tr:nth-child(even) {
+    background: var(--mobile-menu-);
+} */
+
+.category-table tbody tr:hover {
+    background: var(--hover);
+}
+
+.status {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.status.active {
+    background: #198754;
+}
+
+.status.inactive {
+    background: #ffc107;
+    color: #000;
+}
+
+.status.deleted {
+    background: #dc3545;
+}
+
+.action-btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    margin-right: 8px;
+    transition: 0.3s;
+}
+
+.edit-btn {
+    background: #ffc107;
+    color: #000;
+}
+
+.edit-btn:hover {
+    background: #e0a800;
+}
+
+.delete-btn {
+    background: #dc3545;
+}
+
+.delete-btn:hover {
+    background: #bb2d3b;
+}
+
+.no-data {
+    text-align: center;
+    color: #777;
+    padding: 20px;
+    font-style: italic;
+}
