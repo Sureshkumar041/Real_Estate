@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/Real_Estate/static/css/main.bc7f8cc5.css",
-    "main.js": "/Real_Estate/static/js/main.6529f6df.js",
-    "static/js/488.dcb52a01.chunk.js": "/Real_Estate/static/js/488.dcb52a01.chunk.js",
-    "static/media/hero-dark.webm": "/Real_Estate/static/media/hero-dark.b59eb0e95212ea3041ff.webm",
-    "static/media/hero-light.webm": "/Real_Estate/static/media/hero-light.6e050bb5a5b2ba1a05cd.webm",
-    "static/media/Ahaan.gif": "/Real_Estate/static/media/Ahaan.ce2545ff0f4128e66917.gif",
-    "static/media/fa-solid-900.woff2": "/Real_Estate/static/media/fa-solid-900.ce9a3fa740bd60b4ac3b.woff2",
-    "static/media/fa-brands-400.woff2": "/Real_Estate/static/media/fa-brands-400.f276979f97f1cf375d23.woff2",
-    "static/media/error-404.webp": "/Real_Estate/static/media/error-404.5340cfb9cd35cd4ad2cf.webp",
-    "static/media/Paperplane.gif": "/Real_Estate/static/media/Paperplane.9c1f0bf0ab720f2179df.gif",
-    "static/media/fa-regular-400.woff2": "/Real_Estate/static/media/fa-regular-400.cfbad32c79d9dda6af4a.woff2",
-    "static/media/fa-v4compatibility.woff2": "/Real_Estate/static/media/fa-v4compatibility.296da06936a3373940c8.woff2",
-    "index.html": "/Real_Estate/index.html",
-    "main.bc7f8cc5.css.map": "/Real_Estate/static/css/main.bc7f8cc5.css.map",
-    "main.6529f6df.js.map": "/Real_Estate/static/js/main.6529f6df.js.map",
-    "488.dcb52a01.chunk.js.map": "/Real_Estate/static/js/488.dcb52a01.chunk.js.map"
+    "main.css": "/static/css/main.e4e866a5.css",
+    "main.js": "/static/js/main.d84e22fc.js",
+    "static/js/488.dcb52a01.chunk.js": "/static/js/488.dcb52a01.chunk.js",
+    "static/media/hero-dark.webm": "/static/media/hero-dark.b59eb0e95212ea3041ff.webm",
+    "static/media/hero-light.webm": "/static/media/hero-light.6e050bb5a5b2ba1a05cd.webm",
+    "static/media/Ahaan.gif": "/static/media/Ahaan.ce2545ff0f4128e66917.gif",
+    "static/media/fa-solid-900.woff2": "/static/media/fa-solid-900.ce9a3fa740bd60b4ac3b.woff2",
+    "static/media/fa-brands-400.woff2": "/static/media/fa-brands-400.f276979f97f1cf375d23.woff2",
+    "static/media/error-404.webp": "/static/media/error-404.5340cfb9cd35cd4ad2cf.webp",
+    "static/media/Paperplane.gif": "/static/media/Paperplane.9c1f0bf0ab720f2179df.gif",
+    "static/media/fa-regular-400.woff2": "/static/media/fa-regular-400.cfbad32c79d9dda6af4a.woff2",
+    "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.296da06936a3373940c8.woff2",
+    "index.html": "/index.html",
+    "main.e4e866a5.css.map": "/static/css/main.e4e866a5.css.map",
+    "main.d84e22fc.js.map": "/static/js/main.d84e22fc.js.map",
+    "488.dcb52a01.chunk.js.map": "/static/js/488.dcb52a01.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bc7f8cc5.css",
-    "static/js/main.6529f6df.js"
+    "static/css/main.e4e866a5.css",
+    "static/js/main.d84e22fc.js"
   ]
 }
